@@ -204,7 +204,7 @@ resource "azurerm_network_interface" "jumpbox" {
  tags = var.tags
 }
 
-#Establish an Autoscale rule that scales up/down based on a metric of your choice (and be able to demonstrate a scaling event)
+#Establish an Autoscale rule that scales up/down based on CPU Usage
 resource "azurerm_monitor_autoscale_setting" "mas" {
   name                = "autoscale-cpu"
   target_resource_id  = "${azurerm_virtual_machine_scale_set.vmss.id}"
